@@ -28,10 +28,15 @@
 	}
 
 	View.prototype._removeItem = function (id) {
-		var elem = qs('[data-id="' + id + '"]');
+		//var elem = qs('[data-id="' + id + '"]');
+		var listItem = qs('[data-id="' + id + '"]');
 
-		if (elem) {
+		/* if (elem) {
 			this.$todoList.removeChild(elem);
+		} */
+		
+		if (listItem) {
+			this.$todoList.removeChild(listItem);
 		}
 	};
 
