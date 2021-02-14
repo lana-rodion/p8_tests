@@ -1,0 +1,41 @@
+{
+  "name": "p8_tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Improve an existing project and test it with unit tests in Jasmine",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine": "^3.6.4",
+    "jasmine-core": "^3.6.0",
+    "npm-check-updates": "^11.1.3",
+    "todomvc-app-css": "^2.3.0",
+    "todomvc-common": "^1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lana-rodion/p8_tests.git"
+  },
+  "keywords": [
+    "front-end",
+    "development",
+    "javascript",
+    "unit",
+    "tests",
+    "jasmine",
+    "performance",
+    "audit"
+  ],
+  "author": "Lana Rodion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lana-rodion/p8_tests/issues"
+  },
+  "homepage": "https://github.com/lana-rodion/p8_tests#readme"
+}
