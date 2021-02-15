@@ -1,5 +1,5 @@
 (function (window) {
-	'use strict';
+	"use strict";
 
 	/**
 	 * Creates a new Model instance and hooks up the storage.
@@ -18,10 +18,10 @@
 	 * @param {function} [callback] The callback to fire after the model is created
 	 */
 	Model.prototype.create = function (title, callback) {
-		title = title || '';
+		title = title || "";
 		callback = callback || function () {};
 
-		var newItem = {
+		let newItem = {
 			title: title.trim(),
 			completed: false
 		};
@@ -45,13 +45,13 @@
 	 * model.read({ foo: 'bar', hello: 'world' });
 	 */
 	Model.prototype.read = function (query, callback) {
-		var queryType = typeof query;
+		let queryType = typeof query;
 		callback = callback || function () {};
 
-		if (queryType === 'function') {
+		if (queryType === "function") {
 			callback = query;
 			return this.storage.findAll(callback);
-		} else if (queryType === 'string' || queryType === 'number') {
+		} else if (queryType === "string" || queryType === "number") {
 			query = parseInt(query, 10);
 			this.storage.find({ id: query }, callback);
 		} else {
@@ -94,7 +94,7 @@
 	 * Returns a count of all todos
 	 */
 	Model.prototype.getCount = function (callback) {
-		var todos = {
+		let todos = {
 			active: 0,
 			completed: 0,
 			total: 0
