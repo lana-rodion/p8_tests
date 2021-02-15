@@ -1,6 +1,8 @@
-/*global app, $on */
+/**
+ * global app, $on 
+*/
 (function () {
-	'use strict';
+	"use strict";
 
 	/**
 	 * Sets up a brand new Todo list.
@@ -20,6 +22,6 @@
 	function setView() {
 		todo.controller.setView(document.location.hash);
 	}
-	$on(window, 'load', setView);
-	$on(window, 'hashchange', setView);
+	$on(window, "load", setView);
+	$on(window, "hashchange", setView);
 })();

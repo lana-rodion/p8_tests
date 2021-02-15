@@ -1,6 +1,5 @@
-/*global NodeList */
 (function (window) {
-	'use strict';
+	"use strict";
 
 	// Get element(s) by CSS selector:
 	window.qs = function (selector, scope) {
@@ -19,9 +18,9 @@
 	// now or in the future, based on a root element
 	window.$delegate = function (target, selector, type, handler) {
 		function dispatchEvent(event) {
-			var targetElement = event.target;
-			var potentialElements = window.qsa(selector, target);
-			var hasMatch = Array.prototype.indexOf.call(potentialElements, targetElement) >= 0;
+			let targetElement = event.target;
+			let potentialElements = window.qsa(selector, target);
+			let hasMatch = Array.prototype.indexOf.call(potentialElements, targetElement) >= 0;
 
 			if (hasMatch) {
 				handler.call(targetElement, event);
@@ -29,7 +28,7 @@
 		}
 
 		// https://developer.mozilla.org/en-US/docs/Web/Events/blur
-		var useCapture = type === 'blur' || type === 'focus';
+		let useCapture = type === "blur" || type === "focus";
 
 		window.$on(target, type, dispatchEvent, useCapture);
 	};
