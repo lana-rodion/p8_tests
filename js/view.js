@@ -1,7 +1,7 @@
 /*global qs, qsa, $on, $parent, $delegate */
 
 (function (window) {
-	'use strict';
+	"use strict";
 
 	/**
 	 * View that abstracts away the browser's DOM completely.
@@ -205,10 +205,10 @@
 				});
 			});
 
-		} else if (event === 'itemEditDone') {
+		} else if (event === "itemEditDone") {
 			self._bindItemEditDone(handler);
 
-		} else if (event === 'itemEditCancel') {
+		} else if (event === "itemEditCancel") {
 			self._bindItemEditCancel(handler);
 		}
 	};
