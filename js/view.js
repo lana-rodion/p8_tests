@@ -28,7 +28,7 @@
 	}
 
 	View.prototype._removeItem = function (id) {
-		let listItem = qs('[data-id="' + id + '"]');
+		let listItem = qs("[data-id=\"" + id + "\"]");
 		
 		if (listItem) {
 			this.$todoList.removeChild(listItem);
@@ -42,11 +42,11 @@
 
 	View.prototype._setFilter = function (currentPage) {
 		qs(".filters .selected").className = "";
-		qs('.filters [href="#/' + currentPage + '"]').className = "selected";
+		qs(".filters [href=\"#/" + currentPage + "\"]").className = "selected";
 	};
 
 	View.prototype._elementComplete = function (id, completed) {
-		let listItem = qs('[data-id="' + id + '"]');
+		let listItem = qs("[data-id=\"" + id + "\"]");
 
 		if (!listItem) {
 			return;
@@ -59,7 +59,7 @@
 	};
 
 	View.prototype._editItem = function (id, title) {
-		let listItem = qs('[data-id="' + id + '"]');
+		let listItem = qs("[data-id=\"" + id + "\"]");
 
 		if (!listItem) {
 			return;
@@ -76,7 +76,7 @@
 	};
 
 	View.prototype._editItemDone = function (id, title) {
-		let listItem = qs('[data-id="' + id + '"]');
+		let listItem = qs("[data-id=\"" + id + "\"]");
 
 		if (!listItem) {
 			return;
@@ -95,39 +95,17 @@
 	View.prototype.render = function (viewCmd, parameter) {
 		let self = this;
 		let viewCommands = {
-			showEntries: function () {
-				self.$todoList.innerHTML = self.template.show(parameter);
-			},
-			removeItem: function () {
-				self._removeItem(parameter);
-			},
-			updateElementCount: function () {
-				self.$todoItemCounter.innerHTML = self.template.itemCounter(parameter);
-			},
-			clearCompletedButton: function () {
-				self._clearCompletedButton(parameter.completed, parameter.visible);
-			},
-			contentBlockVisibility: function () {
-				self.$main.style.display = self.$footer.style.display = parameter.visible ? "block" : "none";
-			},
-			toggleAll: function () {
-				self.$toggleAll.checked = parameter.checked;
-			},
-			setFilter: function () {
-				self._setFilter(parameter);
-			},
-			clearNewTodo: function () {
-				self.$newTodo.value = "";
-			},
-			elementComplete: function () {
-				self._elementComplete(parameter.id, parameter.completed);
-			},
-			editItem: function () {
-				self._editItem(parameter.id, parameter.title);
-			},
-			editItemDone: function () {
-				self._editItemDone(parameter.id, parameter.title);
-			}
+			showEntries: function () { self.$todoList.innerHTML = self.template.show(parameter); },
+			removeItem: function () { self._removeItem(parameter); },
+			updateElementCount: function () { self.$todoItemCounter.innerHTML = self.template.itemCounter(parameter); },
+			clearCompletedButton: function () { self._clearCompletedButton(parameter.completed, parameter.visible); },
+			contentBlockVisibility: function () { self.$main.style.display = self.$footer.style.display = parameter.visible ? "block" : "none"; },
+			toggleAll: function () { self.$toggleAll.checked = parameter.checked; },
+			setFilter: function () { self._setFilter(parameter); },
+			clearNewTodo: function () { self.$newTodo.value = ""; },
+			elementComplete: function () { self._elementComplete(parameter.id, parameter.completed); },
+			editItem: function () { self._editItem(parameter.id, parameter.title); },
+			editItemDone: function () { self._editItemDone(parameter.id, parameter.title); }
 		};
 
 		viewCommands[viewCmd]();
@@ -173,37 +151,22 @@
 	View.prototype.bind = function (event, handler) {
 		let self = this;
 		if (event === "newTodo") {
-			$on(self.$newTodo, "change", function () {
-				handler(self.$newTodo.value);
-			});
+			$on(self.$newTodo, "change", function () { handler(self.$newTodo.value); });
 
 		} else if (event === "removeCompleted") {
-			$on(self.$clearCompleted, "click", function () {
-				handler();
-			});
+			$on(self.$clearCompleted, "click", function () { handler(); });
 
 		} else if (event === "toggleAll") {
-			$on(self.$toggleAll, "click", function () {
-				handler({completed: this.checked});
-			});
+			$on(self.$toggleAll, "click", function () { handler({completed: this.checked}); });
 
 		} else if (event === "itemEdit") {
-			$delegate(self.$todoList, "li label", "dblclick", function () {
-				handler({id: self._itemId(this)});
-			});
+			$delegate(self.$todoList, "li label", "dblclick", function () { handler({id: self._itemId(this)}); });
 
 		} else if (event === "itemRemove") {
-			$delegate(self.$todoList, '.destroy', 'click', function () {
-				handler({id: self._itemId(this)});
-			});
+			$delegate(self.$todoList, ".destroy", "click", function () { handler({id: self._itemId(this)}); });
 
 		} else if (event === "itemToggle") {
-			$delegate(self.$todoList, ".toggle", "click", function () {
-				handler({
-					id: self._itemId(this),
-					completed: this.checked
-				});
-			});
+			$delegate(self.$todoList, ".toggle", "click", function () { handler({ id: self._itemId(this), completed: this.checked }); });
 
 		} else if (event === "itemEditDone") {
 			self._bindItemEditDone(handler);
@@ -216,4 +179,4 @@
 	// Export to window
 	window.app = window.app || {};
 	window.app.View = View;
-})(window);
+}(window));

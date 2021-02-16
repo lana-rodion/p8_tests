@@ -6,7 +6,7 @@
 		"&": "&amp;",
 		"<": "&lt;",
 		">": "&gt;",
-		'"': "&quot;",
+		"\"": "&quot;",
 		"\'": "&#x27;",
 		"`": "&#x60;"
 	};
@@ -31,13 +31,13 @@
 	 */
 	function Template() {
 		this.defaultTemplate
-		=	'<li data-id="{{id}}" class="{{completed}}">'
-		+		'<div class="view">'
-		+			'<input class="toggle" type="checkbox" {{checked}}>'
-		+			'<label>{{title}}</label>'
-		+			'<button class="destroy"></button>'
-		+		'</div>'
-		+	'</li>';
+		=	"<li data-id=\"{{id}}\" class=\"{{completed}}\">"
+		+		"<div class=\"view\">"
+		+			"<input class=\"toggle\" type=\"checkbox\" {{checked}}>"
+		+			"<label>{{title}}</label>"
+		+			"<button class=\"destroy\"></button>"
+		+		"</div>"
+		+	"</li>";
 	}
 
 	/**
@@ -109,4 +109,4 @@
 	// Export to window
 	window.app = window.app || {};
 	window.app.Template = Template;
-})(window);
+}(window));

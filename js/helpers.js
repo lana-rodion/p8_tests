@@ -37,7 +37,8 @@
 	// $parent(qs('a'), 'div');
 	window.$parent = function (element, tagName) {
 		if (!element.parentNode) {
-			return;
+			// Added false because a function should not mix return statements with and without a result
+			return false;
 		}
 		if (element.parentNode.tagName.toLowerCase() === tagName.toLowerCase()) {
 			return element.parentNode;
@@ -48,4 +49,4 @@
 	// Allow for looping on nodes by chaining:
 	// qsa('.foo').forEach(function () {})
 	NodeList.prototype.forEach = Array.prototype.forEach;
-})(window);
+}(window));

@@ -152,4 +152,4 @@
 	// Export to window
 	window.app = window.app || {};
 	window.app.Store = Store;
-})(window);
+}(window));
