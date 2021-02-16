@@ -41,13 +41,14 @@
 	 */
 	Store.prototype.find = function (query, callback) {
 		if (!callback) {
-			return;
+			// Added false because a function should not mix return statements with and without a result
+			return false;
 		}
 
 		let todos = JSON.parse(localStorage[this._dbName]).todos;
 
 		callback.call(this, todos.filter(function (todo) {
-			for (var q in query) {
+			for (const q in query) {
 				if (query[q] !== todo[q]) {
 					return false;
 				}
