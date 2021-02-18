@@ -62,6 +62,13 @@ describe("controller", function () {
 
 	it("should show entries on start-up", function () {
 		// TODO: write test
+		// Define a fake "todo" as the model
+		let todo = {};
+		setUpModel([todo]);
+		// If the controller must to set the view without options (completed, active)
+		subject.setView('#/');
+		// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
+		expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 	});
 
 	describe("routing", function () {
