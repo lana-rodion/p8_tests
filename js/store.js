@@ -80,7 +80,7 @@
 			}
 		}
 		return randomId;
-	}
+	};
 
 	/**
 	 * Will save the given data to the DB. If no item exists it will create a new

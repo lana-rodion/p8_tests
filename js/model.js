@@ -33,8 +33,9 @@
 	 * Finds and returns a model in storage. If no query is given it will simply
 	 * return everything. If you pass in a string or number it will look that up as
 	 * the ID of the model to find. Lastly, you can pass it an object to match against.
-	 * @param {string|number|object} [query] A query to match models against
-	 * @param {function} [callback] The callback to fire after the model is found
+	 * 
+	 * @param {string|number|object} [query] - A query to match models against
+	 * @param {function} [callback] - The callback to fire after the model is found
 	 * @example
 	 * model.read(1, func); // Will find the model with an ID of 1
 	 * model.read('1'); // Same as above
@@ -45,7 +46,7 @@
 		let queryType = typeof query;
 		callback = callback || function () {};
 
-		if (queryType === "function") {
+		/* if (queryType === "function") {
 			callback = query;
 			return this.storage.findAll(callback);
 		} else if (queryType === "string" || queryType === "number") {
@@ -53,6 +54,20 @@
 			this.storage.find({ id: query }, callback);
 		} else {
 			this.storage.find(query, callback);
+		} */
+
+		switch(true) {
+			case queryType === "function":
+				callback = query;
+				this.storage.findAll(callback);
+				break;
+			case queryType === "string" || queryType === "number":
+				query = parseInt(query, 10);
+				this.storage.find({ id: query }, callback);
+				break;
+			default:
+				this.storage.find(query, callback);
+				break;
 		}
 	};
 
