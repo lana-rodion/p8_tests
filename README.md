@@ -19,7 +19,8 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 
 ## Specification
 
-### Step 1 - Find and fix bugs
+### Step 1 - Find and fix bugs 
+<https://github.com/lana-rodion/p8_tests/tree/step1_fix>
 
 *   Recover the existing project 
 *   Install Node modules and the latest version of Jasmine
