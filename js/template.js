@@ -56,7 +56,12 @@
 	 *	completed: 0,
 	 * });
 	 */
+	
+	// Called whenever refreshing or creating a new todo
 	Template.prototype.show = function (data) {
+		// Refactored
+		/* var i, l;
+		var dataLength = data.length; */
 		let view = "";
 
 		for (let i = 0; i < data.length; i++) {
