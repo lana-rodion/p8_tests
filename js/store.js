@@ -30,8 +30,7 @@
 	 * Finds items based on a query given as a JS object
 	 *
 	 * @param {object} query - The query to match against (i.e. {foo: 'bar'})
-	 * @param {function} callback - The callback to fire when the query has
-	 * completed running
+	 * @param {function} callback - The callback to fire when the query has completed running
 	 *
 	 * @example
 	 * db.find({foo: 'bar', hello: 'world'}, function (data) {
@@ -39,6 +38,7 @@
 	 * // hello: world in their properties
 	 * });
 	 */
+
 	Store.prototype.find = function (query, callback) {
 		if (!callback) {
 			return;
@@ -47,7 +47,7 @@
 		let todos = JSON.parse(localStorage[this._dbName]).todos;
 
 		callback.call(this, todos.filter(function (todo) {
-			for (var q in query) {
+			for (let q in query) {
 				if (query[q] !== todo[q]) {
 					return false;
 				}
@@ -67,6 +67,22 @@
 	};
 
 	/**
+	 * Prevent creating two identical IDs
+	 * */
+	Store.prototype.createRandomId = function(todosList) {
+		// Returns a random integer
+		let randomId = Math.floor(Math.random() * 1000);
+		let todosLength = todosList.length;
+
+		for (let i = 0; i < todosLength; i++) {
+			if (randomId === todosList[i].id) {
+				this.createRandomId(todosList);
+			}
+		}
+		return randomId;
+	};
+
+	/**
 	 * Will save the given data to the DB. If no item exists it will create a new
 	 * item, otherwise it'll simply update an existing item's properties
 	 *
@@ -81,12 +97,15 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-		let newId = ""; 
+		/* let newId = ""; 
 		let charset = "0123456789";
 
 		for (var i = 0; i < 6; i++) {
 			newId += charset.charAt(Math.floor(Math.random() * charset.length));
-		}
+		} */
+
+		// Avoid that two IDs could be identical in data.todos
+		let newId = this.createRandomId(todos);
 
 		// If an ID was actually given, find the item and update each property
 		if (id) {
@@ -120,16 +139,18 @@
 	Store.prototype.remove = function (id, callback) {
 		let data = JSON.parse(localStorage[this._dbName]);
 		let todos = data.todos;
-		let todoId;
+		// Not useful variable
+		//let todoId;
 		
-		for (let i = 0; i < todos.length; i++) {
+		// Not useful loop
+		/* for (let i = 0; i < todos.length; i++) {
 			if (todos[i].id === id) {
 				todoId = todos[i].id;
 			}
-		}
+		} */
 
 		for (let i = 0; i < todos.length; i++) {
-			if (todos[i].id === todoId) {
+			if (todos[i].id === id) {
 				todos.splice(i, 1);
 			}
 		}
