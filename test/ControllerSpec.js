@@ -66,9 +66,9 @@ describe("controller", function () {
 		let todo = {};
 		setUpModel([todo]);
 		// If the controller must to set the view without options (completed, active)
-		subject.setView('#/');
+		subject.setView("#/");
 		// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
-		expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
+		expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 	});
 
 	describe("routing", function () {
