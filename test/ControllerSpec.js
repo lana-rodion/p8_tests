@@ -93,10 +93,22 @@ describe("controller", function () {
 
 		it("should show active entries", function () {
 			// TODO: write test
+			let todo = {title: "my todo"};
+			setUpModel([todo]);
+			// If the controller must to set the view with option active
+			subject.setView("#/active");
+			// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
+			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 		});
 
 		it("should show completed entries", function () {
 			// TODO: write test
+			let todo = {title: "my todo"};
+			setUpModel([todo]);
+			// If the controller must to set the view with option completed
+			subject.setView("#/completed");
+			// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
+			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 		});
 	});
 
