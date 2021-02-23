@@ -156,6 +156,11 @@ describe("controller", function () {
 
 	it("should highlight \"All\" filter by default", function () {
 		// TODO: write test
+		// If setView has no parameters
+		subject.setView("");
+		// Expected: the view calls setFilter without parameters because currentPage === ""
+		// to target the All button (with qs) with the empty string
+		expect(view.render).toHaveBeenCalledWith("setFilter", "");
 	});
 
 	it("should highlight \"Active\" filter when switching to active view", function () {
