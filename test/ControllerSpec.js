@@ -158,13 +158,21 @@ describe("controller", function () {
 		// TODO: write test
 		// If setView has no parameters
 		subject.setView("");
-		// Expected: the view calls setFilter without parameters because currentPage === ""
-		// to target the All button (with qs) with the empty string
+		// Expected: the view calls setFilter without parameters, with the empty string 
+		// because currentPage === "" to target the All button (with qs) 
 		expect(view.render).toHaveBeenCalledWith("setFilter", "");
 	});
 
 	it("should highlight \"Active\" filter when switching to active view", function () {
 		// TODO: write test
+		let todo = {title: "my todo"};
+		setUpModel([todo]);
+		// If the controller must to set the view with option active
+		subject.setView("#/active");
+
+		// Expected: the view calls setFilter with the active parameters 
+		// to target the Active button (with qs) 
+		expect(view.render).toHaveBeenCalledWith("setFilter", "active");
 	});
 
 	describe("toggle all", function () {
