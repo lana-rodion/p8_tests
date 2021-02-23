@@ -62,6 +62,13 @@ describe("controller", function () {
 
 	it("should show entries on start-up", function () {
 		// TODO: write test
+		// Define a fake "todo" as the model
+		let todo = {};
+		setUpModel([todo]);
+		// If the controller must to set the view without options (completed, active)
+		subject.setView("#/");
+		// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
+		expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 	});
 
 	describe("routing", function () {
@@ -86,10 +93,22 @@ describe("controller", function () {
 
 		it("should show active entries", function () {
 			// TODO: write test
+			let todo = {title: "my todo"};
+			setUpModel([todo]);
+			// If the controller must to set the view with option active
+			subject.setView("#/active");
+			// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
+			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 		});
 
 		it("should show completed entries", function () {
 			// TODO: write test
+			let todo = {title: "my todo"};
+			setUpModel([todo]);
+			// If the controller must to set the view with option completed
+			subject.setView("#/completed");
+			// Expected: the view calls "render" with the "showEntries" parameters to displaying todos
+			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 		});
 	});
 
@@ -137,10 +156,23 @@ describe("controller", function () {
 
 	it("should highlight \"All\" filter by default", function () {
 		// TODO: write test
+		// If setView has no parameters
+		subject.setView("");
+		// Expected: the view calls setFilter without parameters, with the empty string 
+		// because currentPage === "" to target the All button (with qs) 
+		expect(view.render).toHaveBeenCalledWith("setFilter", "");
 	});
 
 	it("should highlight \"Active\" filter when switching to active view", function () {
 		// TODO: write test
+		let todo = {title: "my todo"};
+		setUpModel([todo]);
+		// If the controller must to set the view with option active
+		subject.setView("#/active");
+
+		// Expected: the view calls setFilter with the active parameters 
+		// to target the Active button (with qs) 
+		expect(view.render).toHaveBeenCalledWith("setFilter", "active");
 	});
 
 	describe("toggle all", function () {

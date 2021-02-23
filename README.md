@@ -27,6 +27,7 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 *   Find and fix bugs
 
 ### Step 2 - Write unit tests
+<https://github.com/lana-rodion/p8_tests/tree/step2_tests>
 
 *   Save time by adopting the test driven development (TDD) method 
 *   Write unit tests using Jasmine in ControllerSpec.js    
