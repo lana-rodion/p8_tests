@@ -208,8 +208,7 @@ describe("controller", function () {
 			view.trigger("toggleAll", {completed: true});
 			
 			/**
-			 * It should test: 
-			 * Controller.prototype.toggleComplete = function (id, completed, silent)
+			 * It should test: Controller.prototype.toggleComplete = function (id, completed, silent) {...}
 			 * self.model.update(id, { completed: completed }, function () {
 			 *	 self.view.render("elementComplete", {
 					id: id,
@@ -225,7 +224,22 @@ describe("controller", function () {
 	describe("new todo", function () {
 		it("should add a new todo to the model", function () {
 			// TODO: write test
+			// Set the view on main page
+			subject.setView("");
+
+			// If a new todo is created in the input id="new-todo"
+			view.trigger("newTodo", "a new todo");
 			
+			/**
+			 * It should test: Controller.prototype.addItem = function (title) {...}
+			 * self.model.create(title, function () {
+					self.view.render("clearNewTodo");
+					self._filter(true);
+				});
+			 */
+			
+			// Expected: the model to creat a new todo. The input value is "title"
+			expect(model.create).toHaveBeenCalledWith("a new todo", jasmine.any(Function));
 		});
 
 		it("should add a new todo to the view", function () {
@@ -242,6 +256,7 @@ describe("controller", function () {
 				}]);
 			});
 
+			// If a new todo is created in the input id="new-todo"
 			view.trigger("newTodo", "a new todo");
 
 			expect(model.read).toHaveBeenCalled();
