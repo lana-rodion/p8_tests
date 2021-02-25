@@ -33,7 +33,6 @@
 	 * Finds and returns a model in storage. If no query is given it will simply
 	 * return everything. If you pass in a string or number it will look that up as
 	 * the ID of the model to find. Lastly, you can pass it an object to match against.
-	 * 
 	 * @param {string|number|object} [query] - A query to match models against
 	 * @param {function} [callback] - The callback to fire after the model is found
 	 * @example
