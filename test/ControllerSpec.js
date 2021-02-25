@@ -178,16 +178,54 @@ describe("controller", function () {
 	describe("toggle all", function () {
 		it("should toggle all todos to completed", function () {
 			// TODO: write test
+			// Test if it toggles ALL checkboxes on/off state and completeness of models
+			// Create at least 2 tasks in the array of todos to test them
+			let todos = [{id: 42, title: "my todo 1", completed: true}, {id: 43, title: "my todo 2", completed: false}];
+			setUpModel(todos);
+
+			// Set the view on main page
+			subject.setView("");
+
+			// Click on toggle-all checkbox to trigger the toggle event where the parameter completed is true
+			view.trigger("toggleAll", {completed: true});
+
+			// Test Model.prototype.update = function (id, data, callback)
+			// Expected: the update of todos when their "completed" attributes to be changed to "true"
+			expect(model.update).toHaveBeenCalledWith(42, {completed: true}, jasmine.any(Function));
+			expect(model.update).toHaveBeenCalledWith(43, {completed: true}, jasmine.any(Function));
 		});
 
 		it("should update the view", function () {
 			// TODO: write test
+			// Create at least 2 tasks in the array of todos to test them. They are not complete yet.
+			let todos = [{id: 42, title: "my todo 1", completed: false}, {id: 43, title: "my todo 2", completed: false}];
+			setUpModel(todos);
+
+			// Set the view on main page
+			subject.setView("");
+
+			// Click on toggle-all checkbox to trigger the toggle event where the parameter completed is true
+			view.trigger("toggleAll", {completed: true});
+			
+			/**
+			 * It should test: 
+			 * Controller.prototype.toggleComplete = function (id, completed, silent)
+			 * self.model.update(id, { completed: completed }, function () {
+			 *	 self.view.render("elementComplete", {
+					id: id,
+					completed: completed
+				});
+			});
+			 **/
+			expect(view.render).toHaveBeenCalledWith("elementComplete", {id: 42, completed: true});
+			expect(view.render).toHaveBeenCalledWith("elementComplete", {id: 43, completed: true});
 		});
 	});
 
 	describe("new todo", function () {
 		it("should add a new todo to the model", function () {
 			// TODO: write test
+			
 		});
 
 		it("should add a new todo to the view", function () {
