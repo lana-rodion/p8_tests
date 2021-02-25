@@ -281,6 +281,20 @@ describe("controller", function () {
 	describe("element removal", function () {
 		it("should remove an entry from the model", function () {
 			// TODO: write test
+			// Set todo to remove
+			let todo = {id: 42, title: "my todo", completed: true};
+			setUpModel([todo]);
+
+			subject.setView("");
+
+			view.trigger("itemRemove", {id: 42});
+			
+			/**
+			 * It should test: Controller.prototype.removeItem = function (id) {...}
+			 * It finds the DOM element matching that ID, removes it from the DOM and also remove it from storage.
+			 * Expected: the model removes a todo.
+			 */
+			expect(model.remove).toHaveBeenCalledWith(42, jasmine.any(Function));
 		});
 
 		it("should remove an entry from the view", function () {
