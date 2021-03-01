@@ -1,7 +1,7 @@
 # Project 8 - p8tests
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dc97ca1743d1473f933a63a6f7f91f94)](https://www.codacy.com/gh/lana-rodion/p8_tests/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lana-rodion/p8tests&amp;utm_campaign=Badge_Grade)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fa1c0fa422ba0ce53682/maintainability)](https://codeclimate.com/github/lana-rodion/p8tests/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dc97ca1743d1473f933a63a6f7f91f94)](https://www.codacy.com/gh/lana-rodion/p8tests/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lana-rodion/p8tests&amp;utm_campaign=Badge_Grade)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d27323738846d7cd7d3b/maintainability)](https://codeclimate.com/github/lana-rodion/p8tests/maintainability)
 
 ## Description
 
@@ -66,7 +66,7 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 
 ## User interface
 
-![alt text](demo/Todos_interface.JPG?raw=true "Todos interface" {width=300px height=367px})
+<img src="demo/Todos_interface.JPG" width="400" height="auto" alt="Todos interface"/>
 
 ## Documentation
 [The Wiki page of project p8tests](https://github.com/lana-rodion/p8tests/wiki)
