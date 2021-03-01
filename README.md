@@ -1,7 +1,7 @@
-# Project 8 - p8_tests
+# Project 8 - p8tests
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dc97ca1743d1473f933a63a6f7f91f94)](https://www.codacy.com/gh/lana-rodion/p8_tests/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lana-rodion/p8_tests&amp;utm_campaign=Badge_Grade)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fa1c0fa422ba0ce53682/maintainability)](https://codeclimate.com/github/lana-rodion/p8_tests/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dc97ca1743d1473f933a63a6f7f91f94)](https://www.codacy.com/gh/lana-rodion/p8_tests/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lana-rodion/p8tests&amp;utm_campaign=Badge_Grade)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fa1c0fa422ba0ce53682/maintainability)](https://codeclimate.com/github/lana-rodion/p8tests/maintainability)
 
 ## Description
 
@@ -20,14 +20,14 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 ## Specification
 
 ### Step 1 - Find and fix bugs 
-<https://github.com/lana-rodion/p8_tests/tree/step1_fix>
+<https://github.com/lana-rodion/p8tests/tree/step1_fix>
 
 *   Recover the existing project 
 *   Install Node modules and the latest version of Jasmine
 *   Find and fix bugs
 
 ### Step 2 - Write unit tests
-<https://github.com/lana-rodion/p8_tests/tree/step2_tests>
+<https://github.com/lana-rodion/p8tests/tree/step2_tests>
 
 *   Save time by adopting the test driven development (TDD) method 
 *   Write unit tests using Jasmine in ControllerSpec.js    
@@ -66,4 +66,20 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 
 ## User interface
 
+![alt text](demo/Todos_interface.JPG?raw=true "Todos interface")
+
+## Documentation
+[The Wiki page of project p8tests](https://github.com/lana-rodion/p8tests/wiki)
+
 ## Sources
+
+*   [Jasmine pour des tests unitaires en JavaScript](https://onechapteraday.fr/javascript-jasmine-unit-tests/)
+*   [Jasmine Behavior-Driven JavaScript Getting Started](https://jasmine.github.io/pages/getting_started.html)
+*   [Jasmine Namespace: matchers](https://jasmine.github.io/api/edge/matchers.html)
+*   [Jasmine Tutorials - Your first suite](https://jasmine.github.io/tutorials/your_first_suite)
+*   [Jasmine: createSpy() and createSpyObj()](https://scriptverse.academy/tutorials/jasmine-createspy-createspyobj.html)
+*   [Les pratiques TDD ou Test Driven Development](https://www.nutcache.com/fr/blog/tdd-test-driven-development/)
+*   About using MVC in JavaScript:
+    *   <https://www.taniarascia.com/javascript-mvc-todo-app/>
+    *   <https://practicalprogramming.fr/mvc/>
+*   Openclassrooms / Emily Reese's course: [How to test the interface of your website](https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site)
