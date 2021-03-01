@@ -66,7 +66,7 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 
 ## User interface
 
-![alt text](demo/Todos_interface.JPG?raw=true "Todos interface")
+![alt text](demo/Todos_interface.JPG?raw=true "Todos interface" {width=300px height=367px})
 
 ## Documentation
 [The Wiki page of project p8tests](https://github.com/lana-rodion/p8tests/wiki)
