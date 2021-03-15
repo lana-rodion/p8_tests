@@ -88,5 +88,5 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 *   About using MVC in JavaScript:
     *   <https://www.taniarascia.com/javascript-mvc-todo-app/>
     *   <https://practicalprogramming.fr/mvc/>
-    *   
+
 *   Openclassrooms / Emily Reese's course: [How to test the interface of your website](https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site)
