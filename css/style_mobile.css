@@ -38,6 +38,7 @@
   .new-todo, .new-todo::placeholder, .edit, .view label {
     font-size: 22px !important;
   }
+}
 
 @media (max-width: 640px) {
   body {
