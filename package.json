@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.4",
   "description": "Improve an existing project and test it with unit tests in Jasmine",
-  "main": "index.js",
+  "main": "index.html",
   "directories": {
     "test": "test"
   },
