@@ -1,7 +1,7 @@
 /* GENERAL */
 
 .filters, .todo-count, .clear-completed {
-  padding: 0.5em 0 !important;
+  padding: 0.5em 0;
 }
 
 .filters li a, .filters a:active, .filters a:hover {

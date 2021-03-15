@@ -1,7 +1,7 @@
 {
   "name": "p8_tests",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Improve an existing project and test it with unit tests in Jasmine",
   "main": "index.js",
   "directories": {
