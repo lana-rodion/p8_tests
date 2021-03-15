@@ -5,16 +5,16 @@
 }
 
 .filters li a, .filters a:active, .filters a:hover {
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 1rem;
 }
 
 .selected, .filters a:hover {
-  border: 1px solid rgb(96, 79, 248) !important;
+  border: 1px solid rgb(96, 79, 248);
 }
 
 .filters a:hover {
-  background-color: rgb(96, 79, 248) !important;
-  color: #FFF !important;
+  background-color: rgb(96, 79, 248);
+  color: #FFF;
 }
 
 .footer {
@@ -36,7 +36,7 @@
   }
 
   .new-todo, .new-todo::placeholder, .edit, .view label {
-    font-size: 22px !important;
+    font-size: 22px;
   }
 }
 
