@@ -66,7 +66,7 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 
 ## User interface
 
-<img src="demo/Todos_interface.JPG" width="400" height="auto" alt="Todos interface"/>
+<img src="demo/p8test_online_ListTasks_AllTasksCheck.JPG" width="400" height="auto" alt="Todos interface"/>
 
 ## Documentation
 [The Wiki page of project p8tests](https://github.com/lana-rodion/p8tests/wiki)
@@ -74,12 +74,19 @@ This project consists to add tests and fix some bugs in the "to-do-list" applica
 ## Sources
 
 *   [Jasmine pour des tests unitaires en JavaScript](https://onechapteraday.fr/javascript-jasmine-unit-tests/)
+
 *   [Jasmine Behavior-Driven JavaScript Getting Started](https://jasmine.github.io/pages/getting_started.html)
+
 *   [Jasmine Namespace: matchers](https://jasmine.github.io/api/edge/matchers.html)
+
 *   [Jasmine Tutorials - Your first suite](https://jasmine.github.io/tutorials/your_first_suite)
+
 *   [Jasmine: createSpy() and createSpyObj()](https://scriptverse.academy/tutorials/jasmine-createspy-createspyobj.html)
+
 *   [Les pratiques TDD ou Test Driven Development](https://www.nutcache.com/fr/blog/tdd-test-driven-development/)
+
 *   About using MVC in JavaScript:
     *   <https://www.taniarascia.com/javascript-mvc-todo-app/>
     *   <https://practicalprogramming.fr/mvc/>
+    *   
 *   Openclassrooms / Emily Reese's course: [How to test the interface of your website](https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site)
