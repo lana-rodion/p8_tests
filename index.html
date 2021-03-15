@@ -2,14 +2,25 @@
 <html lang="en" data-framework="javascript">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="To-do list. Manage your active and completed tasks. Project Javascript application used npm_modules.">
+		<meta name="author" content="2021. Tested and refactored by Lana Rodion.">
+		<meta name="keywords" content="to-do list task management html css frontend object-oriented javascript application">
 		<title>To-do list app</title>
+		<!-- Twitter Page description less than 200 characters -->
+		<meta name="twitter:description" content="To-do list. Take over and improve an existing project for the Front-end Developer Training / Openclassrooms.">
+		<link rel="icon" type="image/png" href="https://2.gravatar.com/avatar/7a582c7bf3c6a6a8ca0a9d9f36620fb7.png">
 		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<!-- Custom styles for mobiles -->
+		<link href="css/style_mobile.css" rel="stylesheet">
 	</head>
 	<body>
 		<section class="todoapp">
 			<header class="header">
 				<h1>todos</h1>
+				<!-- Added label for="new-todo" -->
 				<label for="new-todo"> </label>
 				<input id="new-todo" class="new-todo" placeholder="What needs to be done?" autofocus>
 			</header>
